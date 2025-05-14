@@ -19,21 +19,35 @@ public class NumberTest {
         list.add(33);
         System.out.println(list);
 
+        //Find even no from the list
       List<Integer> evenList = list.stream().filter(i->i%2==0).collect(Collectors.toList());
         System.out.println(evenList);
+
+        //find the odd no from the list
         List<Integer> oddList=list.stream().filter(i->i%2!=0).collect(Collectors.toList());
         System.out.println(oddList);
+
+        //bigger then 10
         List<Integer> biggerthen10=list.stream().filter(i->i>10).collect(Collectors.toList());
         System.out.println(biggerthen10);
+
+        //Squire of the number
         List<Integer> squire=list.stream().map(i->i*i).collect(Collectors.toList());
         System.out.println(squire);
+
+        //even squire
         List<Integer> squireEven=list.stream().map(i->i*i).filter(i->i%2==0).collect(Collectors.toList());
         System.out.println(squireEven);
+
+        //sorted squire of the arraylist
         List<Integer> sortedSquire = list.stream().sorted().map(i -> i * i).collect(Collectors.toList());
         System.out.println(sortedSquire);
+
+        //sorted even squire
         List<Integer> sortevenSquire = list.stream().sorted().map(i -> i * i).filter(i -> i % 2 == 0).collect(Collectors.toList());
         System.out.println(sortevenSquire);
 
+        //Aniother list
         List<Integer> list1 = new ArrayList<>();
         list1.add(123);
         list1.add(250);
@@ -44,8 +58,12 @@ public class NumberTest {
         list1.add(432);
 
         System.out.println(list1);
+
+        //append charecter in list
         List<String> collect = list1.stream().sorted().map(i -> i.toString()).map(i->i+'A').collect(Collectors.toList());
         System.out.println(collect);
+
+        //reverse the string
         List<StringBuilder> collect1 = collect.stream().map(i -> new StringBuilder(i).reverse()).collect(Collectors.toList());
         System.out.println(collect1);
     }

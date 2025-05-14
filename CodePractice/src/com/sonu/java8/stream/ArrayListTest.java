@@ -13,33 +13,48 @@ public class ArrayListTest {
                 new Employee("Ashmita",40000,"Delhi"));
         System.out.println(listofemp);
 
-/*        List<Employee> salgreater = listofemp.stream().filter(employee -> employee.salary > 20000).collect(Collectors.toList());
-//        System.out.println(salgreater);
+        //find the employee whoes sal is greater then 20000
+        System.out.println("employee whoes sal is greater then 20000");
+        List<Employee> salgreater = listofemp.stream().filter(employee -> employee.salary > 20000)
+                .collect(Collectors.toList());
+        System.out.println(salgreater);
+
+        //maximum salary
+        System.out.println("maximum salary");
         Optional<Employee> maxSal = listofemp.stream().max(Comparator.comparingInt(emp -> emp.salary));
-//        System.out.println(maxSal);
-//        List<Long> salIncForFresh = listofemp.stream().filter(emp -> emp.salary < 30000).map(emp -> emp.salary = emp.salary * 2).collect(Collectors.toList());
-//        System.out.println(salIncForFresh);
-        List<Integer> salIncFresh = listofemp.stream().filter(employee -> employee.salary < 30000).map(employee -> employee.salary * 2).collect(Collectors.toList());
-//        System.out.println(salIncFresh);
+        System.out.println(maxSal);
+
+        //salary incriment
+        System.out.println("Salary Incriment by");
+
+        List<Integer> salIncrement = listofemp.stream().filter(emp -> emp.salary < 30000)
+                .map(emp -> emp.salary = emp.salary * 2).collect(Collectors.toList());
+        System.out.println(salIncrement);
+
+
+        // new list
 
         List<Student> studentList=Arrays.asList(new Student("Sonu",1),
                 new Student("Rajesh",2),
                 new Student("Divyanshu",3));
-        System.out.println(studentList);
+        System.out.println("Student list /n"+studentList);
 
+        // store list into map
         Map<String, Integer> map1 = studentList.stream().collect(Collectors.toMap(s -> s.name, s -> s.studentId));
         System.out.println(map1);
 
-        List<String> collect = map1.keySet().stream().collect(Collectors.toList());
-        System.out.println(collect);*/
+        //collect map in list
+        List<String> collectList = map1.keySet().stream().collect(Collectors.toList());
+        System.out.println(collectList);
 
-      /*  List<Employee> collect = listofemp.stream().filter(employee -> employee.salary > 30000).collect(Collectors.toList());
-        System.out.println(collect);*/
+        //Salary Filter
+        List<Employee> salFilter = listofemp.stream().filter(employee -> employee.salary > 30000)
+                .collect(Collectors.toList());
+        System.out.println(salFilter);
 
-        /*Map<String, String> collect = listofemp.stream().filter(employee -> employee.salary > 30000).collect(Collectors.toMap(emp -> emp.city,emp -> emp.name));
-        System.out.println(collect);*/
-
-        Map<String, List<String>> collect = listofemp.stream().filter(emp -> emp.salary > 30000).collect(Collectors.groupingBy(e -> e.city, Collectors.mapping(e1 -> e1.name, Collectors.toList())));
+        // employee whoes salary is greater then 30k amd store in map where key is city and value is the list of employee from that city
+         Map<String, List<String>> collect = listofemp.stream().filter(emp -> emp.salary > 30000)
+                 .collect(Collectors.groupingBy(e -> e.city, Collectors.mapping(e1 -> e1.name, Collectors.toList())));
         System.out.println(collect);
     }
 }

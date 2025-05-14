@@ -13,14 +13,13 @@ public class Wissen1Array {
         for (int i = 0; i <arr.length ; i++) {
             arr[i]=scanner.nextInt();
         }
-        Arrays.stream(arr).sorted();
 
         int[] updateSeq=performanceSeq(arr,n);
         System.out.println(Arrays.toString(arr));
     }
 
     private static int[] performanceSeq(int[] arr, int n) {
-//        int[] updateArr=new int[n];
+             Arrays.sort(arr);
         for (int i = 0; i < arr.length-1; i++) {
             if (arr[i] <arr[i+1]) {
                 int temp=arr[i];

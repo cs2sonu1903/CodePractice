@@ -12,25 +12,27 @@ public class Wissen2 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = scanner.nextInt();
         }
+//        int arr[]={3,2,5,1,4};
         int sumMidIndex=sumMidPoint(arr);
         System.out.println("Sum Mid point index "+sumMidIndex);
 
     }
 
     private static int sumMidPoint(int[] arr) {
-        int leftSum=0,rightSum=0,index=0;
-        for (int i = 0; i <arr.length; i++) {
-            leftSum=leftSum+arr[i];
-            for (int j = i+1; j <arr.length-1 ; j++) {
-                rightSum=rightSum+arr[j];
-                continue;
+
+        for (int i = 0; i < arr.length; i++) {
+            int leftSum = 0, rightSum = 0;
+            for (int j = 0; j < i; j++) {
+                leftSum += arr[j];
+            }
+            for (int j = i + 1; j < arr.length; j++) {
+                rightSum += arr[j];
             }
             if (leftSum == rightSum) {
-                index=arr[i];
-
+                return i;
             }
 
         }
-        return index;
+        return 0;
     }
 }

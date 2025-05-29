@@ -1,4 +1,4 @@
-package com.sonu.java8.stream.interview;
+package com.sonu.stream.interview;
 
 import java.util.ArrayList;
 import java.util.List;

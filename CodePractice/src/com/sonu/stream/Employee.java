@@ -1,4 +1,4 @@
-package com.sonu.java8.stream;
+package com.sonu.stream;
 
 public class Employee {
     String name;

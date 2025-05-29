@@ -1,6 +1,6 @@
 package com.sonu.stream.object;
 
-import com.sonu.java8.stream.interview.Address;
+import com.sonu.stream.interview.Address;
 
 public class Student {
     private int id;

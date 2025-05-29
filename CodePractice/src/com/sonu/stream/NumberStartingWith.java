@@ -1,4 +1,4 @@
-package com.sonu.java8.stream;
+package com.sonu.stream;
 
 import java.util.ArrayList;
 import java.util.List;

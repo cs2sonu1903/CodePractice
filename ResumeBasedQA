@@ -1,0 +1,81 @@
+Based on your resume, here's a tailored set of Java Backend Developer interview questions and model answers to help you confidently present your 3+ years of experience:
+
+
+
+ 1. Tell me about yourself.
+
+Answer:
+I'm a Java Backend Developer with over 3 years of experience, currently working at Capgemini on HSBC client projects. I've developed and maintained scalable RESTful APIs, implemented schedulers for document and file processing, and upgraded legacy code from Java 8 to Java 17 and Spring Boot 3.x. I’ve also contributed to DB migrations from Oracle to PostgreSQL and improved application performance through multithreading and Hibernate caching. I enjoy working on microservicesbased architecture and continuously learning modern backend technologies like Docker, Kubernetes, and Kafka.
+
+
+
+ 2. What challenges did you face while migrating from Java 8 to Java 17?
+
+Answer:
+One challenge was adapting to new language features like `var`, switch expressions, and enhancements in Streams and Collections. We also had to ensure compatibility with thirdparty libraries and frameworks during the Spring Boot upgrade to 3.x, especially since some dependencies were deprecated. Proper regression testing and containerization helped ensure smooth transitions.
+
+
+
+ 3. How did you implement caching using Hibernate?
+
+Answer:
+We used Hibernate's secondlevel caching with Ehcache to store frequently accessed data. This reduced DB hits and improved response time significantly—nearly doubling the application’s performance. We configured caching in the `persistence.xml` and enabled annotations like `@Cacheable` on entities.
+
+
+
+ 4. Explain your role in the Brownfield Airlines project.
+
+Answer:
+I led the backend development of a microservicesbased flight management system during a Capgemini Hackathon. My responsibilities included building REST APIs for booking, feedback, and flight scheduling services. We used Spring Boot, PostgreSQL, and followed clean code principles. Our efficient service design helped us win first place.
+
+
+
+ 5. Can you describe the filesplitting scheduler you built?
+
+Answer:
+Yes, the filesplitting scheduler was designed to process large data files by splitting them into manageable chunks and storing them for further processing. I used multithreading to improve performance and created logs and checkpoints to ensure fault tolerance. It ran as a scheduled task in Spring Boot using `@Scheduled`.
+
+
+
+ 6. How did you migrate databases from Oracle to PostgreSQL?
+
+Answer:
+The migration involved schema conversion, data type mapping, and query optimization. We used tools like Flyway and pgloader to assist with data migration. I also refactored Oraclespecific SQL to PostgreSQLcompatible syntax, ensuring transactional integrity and improved performance by 15%.
+
+
+
+ 7. What are some best practices you follow in writing REST APIs?
+
+Answer:
+
+ Use proper HTTP status codes.
+ Design resourceoriented endpoints (nouns, not verbs).
+ Keep responses consistent with standard formats (usually JSON).
+ Implement exception handling globally with `@ControllerAdvice`.
+ Secure endpoints using Spring Security.
+ Validate input using Bean Validation (`@Valid`, `@NotNull` etc).
+
+
+
+ 8. What tools and technologies are you comfortable with for deployment and monitoring?
+
+Answer:
+I'm experienced with Docker for containerization, Kubernetes for orchestration, and Splunk for log analysis and monitoring. For messaging, I’ve used Kafka in eventdriven microservices.
+
+
+
+ 9. How do you ensure code quality and maintainability?
+
+Answer:
+I follow SOLID principles, write unit tests with JUnit, and perform code reviews. I also use version control (Git) and CI/CD pipelines for smooth integration and deployment. Clean code, meaningful naming, and modularity are key principles I adhere to.
+
+
+
+ 10. Have you faced a production issue? How did you resolve it?
+
+Answer:
+Yes, once a scheduler failed due to a memory leak from improperly closed file streams. I debugged it using logs and heap analysis, then fixed it by ensuring proper resource closure with trywithresources. Postfix, I added monitoring alerts to proactively catch similar issues.
+
+
+
+Would you like these compiled into a formatted PDF for mock interview preparation or a custom list tailored to specific roles like Spring Boot Microservices, Java Developer with Kubernetes, etc.?

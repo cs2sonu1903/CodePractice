@@ -1,0 +1,216 @@
+ Core Spring Boot Concepts
+
+1. What is Spring Boot, and how is it different from the traditional Spring Framework?
+
+    Spring Boot is a framework designed to simplify the development of Spring-based applications by offering defaults and pre-configurations.
+    Unlike the traditional Spring Framework, it eliminates boilerplate code, XML configurations, and provides embedded servers like Tomcat or Jetty for running applications.
+
+2. Explain the concept of auto-configuration in Spring Boot. How does it work?
+
+    Auto-configuration automatically configures Spring applications based on the libraries in the classpath and the properties defined in `application.properties` or `application.yml`. Spring Boot uses `@EnableAutoConfiguration` and checks for beans or configurations in the `META-INF/spring.factories` file.
+
+3. What are starter dependencies in Spring Boot? Can you name a few commonly used ones?
+
+    Starter dependencies are pre-defined dependency bundles that simplify the inclusion of related dependencies. Examples:
+
+      `spring-boot-starter-web` (for web applications)
+      `spring-boot-starter-data-jpa` (for JPA and Hibernate)
+      `spring-boot-starter-security` (for security)
+
+4. What is the @SpringBootApplication annotation, and what does it combine?
+
+    `@SpringBootApplication` is a meta-annotation that combines:
+
+      `@Configuration`: Marks the class as a source of bean definitions.
+      `@EnableAutoConfiguration`: Enables auto-configuration.
+      `@ComponentScan`: Scans for components in the package.
+
+5. How do you configure properties in Spring Boot? Discuss application.properties and application.yml.
+
+    Configuration is done using `application.properties` or `application.yml`. For example:
+
+      `application.properties`:
+
+       ```properties
+       server.port=8081
+       ```
+      `application.yml`:
+
+       ```yaml
+       server:
+         port: 8081
+       ```
+
+6. Explain the purpose of the CommandLineRunner and ApplicationRunner interfaces.
+
+    These interfaces allow you to execute code after the application context is loaded.
+
+      `CommandLineRunner`: Accepts `String[] args`.
+      `ApplicationRunner`: Works with `ApplicationArguments`.
+
+---
+
+ Dependency Injection and Annotations
+
+7. What is dependency injection, and how is it implemented in Spring Boot?
+
+    Dependency Injection (DI) is a design pattern that provides objects their dependencies. In Spring Boot, DI is implemented via annotations like `@Autowired`, constructor injection, or setter injection.
+
+8. Explain the difference between @Component, @Service, @Repository, and @Controller.
+
+    `@Component`: Generic stereotype for any Spring-managed component.
+    `@Service`: Indicates a service layer.
+    `@Repository`: Specializes in DAO (Data Access Object) classes.
+    `@Controller`: Marks a class as a web controller.
+
+9. What is the difference between @RestController and @Controller?
+
+    `@Controller`: Used in MVC applications to return views.
+    `@RestController`: Combines `@Controller` and `@ResponseBody` to return JSON/XML responses.
+
+10. What is the purpose of @Autowired? How does it work internally?
+
+     `@Autowired` injects dependencies into Spring beans. Internally, it uses reflection and the BeanFactory to resolve dependencies.
+
+---
+
+ Configuration and Profiles
+
+11. What are Spring Profiles? How do you use them?
+
+     Profiles allow you to define different configurations for various environments. Use `@Profile` or specify profiles in `application.properties` (`spring.profiles.active=dev`).
+
+12. How can you override default Spring Boot properties for different environments?
+
+     Create environment-specific files like `application-dev.properties` or `application-prod.yml`.
+
+13. Explain the purpose of @Configuration and @Bean annotations.
+
+     `@Configuration`: Indicates a class contains bean definitions.
+     `@Bean`: Marks a method to produce a bean managed by the Spring container.
+
+---
+
+ Database and JPA
+
+14. How do you configure a datasource in Spring Boot?
+
+     Configure it in `application.properties`:
+
+      ```properties
+      spring.datasource.url=jdbc:mysql://localhost:3306/mydb
+      spring.datasource.username=root
+      spring.datasource.password=pass
+      ```
+
+15. What is Spring Data JPA, and how does it simplify database operations?
+
+     Spring Data JPA simplifies database interactions by providing pre-implemented repositories, dynamic queries, and custom query methods.
+
+16. What is the difference between CrudRepository and JpaRepository?
+
+     `CrudRepository`: Provides basic CRUD operations.
+     `JpaRepository`: Extends `CrudRepository` with JPA-specific features like pagination.
+
+17. Explain how to use the @Transactional annotation.
+
+     `@Transactional` manages transaction boundaries. It rolls back transactions if exceptions occur.
+
+18. How do you handle database migrations in Spring Boot (e.g., Flyway or Liquibase)?
+
+     Add Flyway or Liquibase dependencies and place migration scripts in `db/migration` or configure Liquibase with a `changelog` file.
+
+---
+
+ RESTful APIs
+
+19. How do you create a RESTful API in Spring Boot?
+
+     Use `@RestController` and HTTP mapping annotations like `@GetMapping`.
+
+20. Explain the use of @GetMapping, @PostMapping, @PutMapping, and @DeleteMapping.
+
+     These annotations map HTTP methods (GET, POST, PUT, DELETE) to handler methods.
+
+21. What are HTTP status codes, and how do you set them in a Spring Boot application?
+
+     HTTP status codes indicate the response status. Use `ResponseEntity` or annotations like `@ResponseStatus`.
+
+22. How do you handle exceptions in a Spring Boot REST API? Discuss @ControllerAdvice and @ExceptionHandler.
+
+     Use `@ControllerAdvice` for global exception handling and `@ExceptionHandler` for specific exceptions.
+
+---
+
+ Security
+
+23. How do you implement authentication and authorization in a Spring Boot application?
+
+     Use Spring Security with configurations for user roles and permissions.
+
+24. What is Spring Security, and how does it integrate with Spring Boot?
+
+     Spring Security provides authentication and authorization. It integrates via auto-configuration and starter dependencies.
+
+25. Explain the difference between basic authentication and token-based authentication (e.g., JWT).
+
+     Basic: Encodes credentials with every request.
+     Token-based: Issues a token after login (e.g., JWT) for subsequent requests.
+
+---
+
+ Actuator and Monitoring
+
+26. What is Spring Boot Actuator? What features does it provide?
+
+     Provides production-ready endpoints like `/health`, `/metrics`.
+
+27. How do you expose custom metrics using Spring Boot Actuator?
+
+     Implement `Metrics` interfaces or use `MeterRegistry`.
+
+---
+
+ Testing
+
+28. How do you write unit tests for a Spring Boot application?
+
+     Use `@Test`, `Mockito`, and `SpringRunner`.
+
+29. What is the purpose of the @SpringBootTest annotation?
+
+     Loads the full application context for integration testing.
+
+30. How do you test RESTful APIs in Spring Boot?
+
+     Use tools like MockMvc or RestAssured.
+
+---
+
+ Performance and Optimization
+
+31. What is the purpose of caching in Spring Boot? Explain @Cacheable and @CacheEvict.
+
+     `@Cacheable`: Caches method results.
+     `@CacheEvict`: Removes cache entries.
+
+32. How do you monitor and tune the performance of a Spring Boot application?
+
+     Use Actuator, profiling tools, or APM tools.
+
+---
+
+ Advanced Topics
+
+33. How does Spring Boot handle asynchronous processing? Discuss @Async.
+
+     Use `@Async` on methods for asynchronous execution. Requires `@EnableAsync`.
+
+34. What is the purpose of the WebClient in Spring WebFlux? How does it differ from RestTemplate?
+
+     `WebClient` is non-blocking, supporting reactive programming, unlike `RestTemplate`, which is blocking.
+
+35. How do you configure and use message brokers in Spring Boot (e.g., RabbitMQ, Kafka)?
+
+     Add dependencies and use Spring AMQP (for RabbitMQ) or Spring Kafka for integration.
+

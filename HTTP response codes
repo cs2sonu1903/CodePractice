@@ -1,0 +1,54 @@
+HTTP response codes are part of the HTTP protocol and indicate the status of a client's request when interacting with a server. They are categorized into five classes, each with specific uses:
+
+---
+
+ 1xx: Informational
+
+ 100 Continue: The server has received the request headers, and the client should proceed to send the request body.
+ 101 Switching Protocols: The server acknowledges the request to switch protocols.
+ 102 Processing: Indicates that the server has received the request and is processing it (WebDAV).
+
+---
+
+ 2xx: Success
+
+ 200 OK: The request was successful, and the server is returning the requested data.
+ 201 Created: A resource was successfully created, typically after a POST request.
+ 202 Accepted: The request has been accepted for processing but is not yet complete.
+ 204 No Content: The server successfully processed the request, but there is no content to return.
+
+---
+
+ 3xx: Redirection
+
+ 301 Moved Permanently: The resource has been permanently moved to a new URL.
+ 302 Found: The resource temporarily resides at a different URL.
+ 303 See Other: The server is redirecting the client to a different resource.
+ 304 Not Modified: The client can use cached data as the resource has not changed.
+ 307 Temporary Redirect: Like 302, but the method should not change.
+ 308 Permanent Redirect: Like 301, but the method should not change.
+
+---
+
+ 4xx: Client Errors
+
+ 400 Bad Request: The server cannot process the request due to client error (e.g., malformed syntax).
+ 401 Unauthorized: Authentication is required, or it has failed.
+ 403 Forbidden: The server understands the request but refuses to authorize it.
+ 404 Not Found: The requested resource does not exist on the server.
+ 405 Method Not Allowed: The HTTP method used is not supported for the resource.
+ 408 Request Timeout: The server timed out waiting for the client's request.
+ 429 Too Many Requests: The client has sent too many requests in a given time.
+
+---
+
+ 5xx: Server Errors
+
+ 500 Internal Server Error: The server encountered an unexpected condition.
+ 501 Not Implemented: The server does not support the functionality required to fulfill the request.
+ 502 Bad Gateway: The server received an invalid response from an upstream server.
+ 503 Service Unavailable: The server is currently unavailable (e.g., maintenance).
+ 504 Gateway Timeout: The server did not receive a timely response from an upstream server.
+ 505 HTTP Version Not Supported: The server does not support the HTTP protocol version used in the request.
+
+---

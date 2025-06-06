@@ -214,3 +214,123 @@
 
      Add dependencies and use Spring AMQP (for RabbitMQ) or Spring Kafka for integration.
 
+
+In Spring MVC and Spring Boot, @Value, @PathVariable, and @RequestParam are annotations used to handle different types of input or configuration in your application. Here's a detailed explanation:
+
+-------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+ 1. @Value
+
+ Purpose: Inject values from the configuration (e.g., `application.properties`, `application.yml`, or environment variables) into Spring-managed beans.
+
+ Usage:
+
+  ```java
+  @Value("${property.key}")
+  private String propertyValue;
+  ```
+
+ Example:
+  Assume `application.properties` contains:
+
+  ```properties
+  app.name=MyApplication
+  app.version=1.0
+  ```
+
+  Java code:
+
+  ```java
+  @RestController
+  public class ConfigController {
+      @Value("${app.name}")
+      private String appName;
+
+      @Value("${app.version}")
+      private String appVersion;
+
+      @GetMapping("/config")
+      public String getConfig() {
+          return "App: " + appName + ", Version: " + appVersion;
+      }
+  }
+  ```
+
+  Result: A `GET` request to `/config` would return `"App: MyApplication, Version: 1.0"`.
+
+---
+
+ 2. @PathVariable
+
+ Purpose: Extract values from the URL path and map them to method parameters.
+
+ Usage:
+
+  ```java
+  @GetMapping("/users/{id}")
+  public String getUser(@PathVariable("id") String userId) {
+      return "User ID: " + userId;
+  }
+  ```
+
+ Example:
+  URL: `/users/123`
+
+  ```java
+  @RestController
+  public class UserController {
+      @GetMapping("/users/{id}")
+      public String getUser(@PathVariable String id) {
+          return "User ID: " + id;
+      }
+  }
+  ```
+
+  Result: A `GET` request to `/users/123` would return `"User ID: 123"`.
+
+---
+
+ 3. @RequestParam
+
+ Purpose: Extract query parameters from the URL and map them to method parameters.
+
+ Usage:
+
+  ```java
+  @GetMapping("/search")
+  public String search(@RequestParam("query") String query) {
+      return "Search Query: " + query;
+  }
+  ```
+
+ Example:
+  URL: `/search?query=spring`
+
+  ```java
+  @RestController
+  public class SearchController {
+      @GetMapping("/search")
+      public String search(@RequestParam String query) {
+          return "Search Query: " + query;
+      }
+  }
+  ```
+
+  Result: A `GET` request to `/search?query=spring` would return `"Search Query: spring"`.
+
+---
+
+ Key Differences
+
+| Feature              | @Value                                        | @PathVariable          | @RequestParam       |
+| -------------------- | ------------------------------------------------- | -------------------------- | ----------------------- |
+| Source           | Configuration properties or environment variables | URL path                   | URL query parameters    |
+| Annotation Scope | Bean properties                                   | Method parameters          | Method parameters       |
+| Use Case         | Inject configuration values                       | Dynamic parts of URL paths | Query parameters in URL |
+| Example URL      | Not applicable                                    | `/users/123`               | `/search?query=spring`  |
+
+
+
+

@@ -1,4 +1,4 @@
-package com.sonu.stream;
+package com.sonu.stream.string;
 
 import java.util.Arrays;
 import java.util.HashMap;

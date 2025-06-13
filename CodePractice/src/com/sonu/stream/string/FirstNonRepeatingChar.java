@@ -1,4 +1,4 @@
-package com.sonu.stream;
+package com.sonu.stream.string;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,6 +6,8 @@ import java.util.Set;
 public class FirstNonRepeatingChar {
     public static void main(String[] args) {
         String str="Divyanshu bhaiya bahut fattu hai";
+
+        //Find 1st non repeating character
         Character c1 = str.chars().mapToObj(c -> (char) c).filter(ch -> str.indexOf(ch) == str.lastIndexOf(ch)).findFirst().orElse(null);
         System.out.println(c1);
 

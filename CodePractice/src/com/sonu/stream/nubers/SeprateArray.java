@@ -1,4 +1,4 @@
-package com.sonu.stream;
+package com.sonu.stream.nubers;
 
 import java.util.Arrays;
 import java.util.Collections;

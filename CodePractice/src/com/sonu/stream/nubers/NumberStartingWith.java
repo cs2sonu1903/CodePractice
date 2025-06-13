@@ -1,6 +1,7 @@
-package com.sonu.stream;
+package com.sonu.stream.nubers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,5 +24,12 @@ public class NumberStartingWith {
 
         List<String> collect = list.stream().map(s -> s + "").filter(l -> l.startsWith("1")).collect(Collectors.toList());
         System.out.println(collect);
+
+        //2nd
+
+        List<Integer> nlist = Arrays.asList(10, 15, 18, 20, 22, 24, 17);
+
+        List<String> ncollect = nlist.stream().map(n -> n + "").filter(e -> e.startsWith("1")).collect(Collectors.toList());
+        System.out.println(ncollect);
     }
 }

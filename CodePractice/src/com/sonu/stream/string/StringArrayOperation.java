@@ -1,4 +1,4 @@
-package com.sonu.stream;
+package com.sonu.stream.string;
 
 import java.util.ArrayList;
 import java.util.Collections;

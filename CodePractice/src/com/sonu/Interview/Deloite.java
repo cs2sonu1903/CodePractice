@@ -1,4 +1,4 @@
-package com.sonu.stream.interview;
+package com.sonu.Interview;
 
 import java.util.concurrent.TimeUnit;
 

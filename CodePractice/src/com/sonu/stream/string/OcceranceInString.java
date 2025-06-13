@@ -2,6 +2,7 @@ package com.sonu.stream.string;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -41,6 +42,11 @@ public class OcceranceInString {
         Character c1 = s2.chars().mapToObj(e -> (char) e).collect(Collectors.toMap(c -> c, c -> 1, Integer::sum, HashMap::new)).entrySet().stream()
                 .filter(e -> e.getValue() > 1).map(e -> e.getKey()).findFirst().get();
         System.out.println(c1);
+        //2nd way
+        Character c2 = s.toLowerCase().chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+                .entrySet().stream().filter(m -> m.getValue() > 1).map(m -> m.getKey()).findFirst().get();
+        System.out.println(c2);
+        System.out.println("Test");
 
 
     }

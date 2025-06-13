@@ -11,7 +11,8 @@ public class Annagram {
         String[] s={"pat","tap","pan","nap","Team","tree","meat"};
 
         List<String> list = Arrays.asList(s);
-        Collection<List<String>> collect = list.stream().collect(Collectors.groupingBy(x -> Arrays.stream(x.toLowerCase().split("")).sorted()
+        Collection<List<String>> collect = list.stream().collect(Collectors
+                .groupingBy(x -> Arrays.stream(x.toLowerCase().split("")).sorted()
                 .collect(Collectors.toList()))).values();
         System.out.println(collect);
     }

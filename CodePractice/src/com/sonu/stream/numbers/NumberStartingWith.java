@@ -1,4 +1,4 @@
-package com.sonu.stream.nubers;
+package com.sonu.stream.numbers;
 
 import java.util.ArrayList;
 import java.util.Arrays;

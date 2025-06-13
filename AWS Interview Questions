@@ -1,0 +1,129 @@
+AWS-focused interview questions and answers tailored for a Java Backend Developer with 3+ years of experience like yourself, based on your resume and skills:
+
+
+ 🔹 1. How have you used AWS in your backend projects?
+
+Answer:
+In my projects, I’ve used AWS services like:
+
+ EC2 for hosting microservices,
+ S3 for storing and retrieving files/documents,
+ RDS (PostgreSQL) for managed databases,
+ CloudWatch for monitoring and logs,
+ IAM for managing access control.
+
+I integrated these services into Spring Boot applications using AWS SDK and ensured security best practices with proper IAM roles and environment variable-based credential management.
+
+---
+
+ 🔹 2. What is the difference between EC2 and Lambda? Which one would you choose for your Java microservices?
+
+Answer:
+
+ EC2 is Infrastructure-as-a-Service (IaaS) allowing full control over the OS and environment. It's suitable for long-running microservices.
+ Lambda is Function-as-a-Service (FaaS), suitable for short-lived, event-driven tasks.
+
+For my Java microservices, I prefer EC2 or ECS Fargate due to better cold start performance and easier management of long-running applications.
+
+---
+
+ 🔹 3. How would you deploy a Spring Boot application on AWS?
+
+Answer:
+I would:
+
+1. Package the Spring Boot app as a JAR.
+2. Create a Docker image and push it to Amazon ECR.
+3. Use Amazon ECS (Fargate) or EC2 for container deployment.
+4. Store secrets/configs using AWS Systems Manager Parameter Store or Secrets Manager.
+5. Set up monitoring with CloudWatch Logs.
+
+Optionally, use Elastic Beanstalk for simpler deployments without managing infrastructure.
+
+---
+
+ 🔹 4. What AWS services would you use to build a microservices architecture?
+
+Answer:
+
+ API Gateway – expose REST APIs.
+ Lambda or ECS – run microservices.
+ S3 – store static content/files.
+ DynamoDB / RDS – backend databases.
+ SNS/SQS/Kafka on MSK – asynchronous communication.
+ CloudWatch – monitoring.
+ ECR – store Docker images.
+ IAM – secure access control.
+
+---
+
+ 🔹 5. How do you handle security and credentials in AWS-integrated Java apps?
+
+Answer:
+
+ Use IAM roles with EC2/ECS to avoid hardcoding credentials.
+ Use AWS SDK Default Credential Provider Chain.
+ Store sensitive values in AWS Secrets Manager or SSM Parameter Store.
+ Enable encryption at rest and in-transit (TLS).
+
+---
+
+ 🔹 6. What are some common challenges in integrating AWS with Java backend systems?
+
+Answer:
+
+ Handling AWS SDK version compatibility with Java versions (especially Java 17+).
+ Managing cold starts with Lambda for Java apps.
+ Monitoring and debugging distributed systems using CloudWatch effectively.
+ Ensuring secure, environment-specific configurations.
+ Efficient cost management when scaling services like EC2, RDS.
+
+---
+
+ 🔹 7. What is Amazon RDS and how is it different from deploying a database on EC2?
+
+Answer:
+
+ Amazon RDS is a managed service for databases (PostgreSQL, MySQL, etc.). AWS handles backups, patching, scaling, and availability.
+ Running a DB on EC2 gives full control but you manage everything manually.
+
+For reliability and ease, I prefer RDS, especially for production systems.
+
+---
+
+ 🔹 8. Explain how you monitor your services on AWS.
+
+Answer:
+I use:
+
+ CloudWatch Logs for application logs.
+ CloudWatch Alarms for CPU, memory, and request metrics.
+ X-Ray for tracing service latency.
+ Custom metrics from the Spring Boot app using Micrometer + CloudWatch integration.
+
+---
+
+ 🔹 9. How do you ensure high availability and fault tolerance in your AWS deployments?
+
+Answer:
+
+ Use Auto Scaling Groups with EC2.
+ Deploy in multiple Availability Zones.
+ Use Elastic Load Balancer to distribute traffic.
+ Enable Multi-AZ deployments for RDS.
+ Use CloudFront + S3 for resilient static content delivery.
+
+---
+
+ 🔹 10. Have you used any Infrastructure-as-Code tools to manage AWS resources?
+
+Answer:
+Yes. I’ve worked with:
+
+ Terraform – for provisioning and managing AWS infrastructure.
+ Also familiar with AWS CloudFormation.
+ I use version control for IaC files and maintain environments like dev/test/prod using workspaces or stacks.
+
+---
+
+Would you like a PDF prep guide or mock interview sheet tailored just for AWS + Java Backend questions?

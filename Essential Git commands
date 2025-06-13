@@ -1,0 +1,170 @@
+Here’s a list of essential Git commands that developers use regularly, grouped by purpose:
+
+
+ Basic Git Commands
+
+1. Initialize a repository:
+
+    `git init`
+     Initializes a new Git repository in the current directory.
+
+2. Clone a repository:
+
+    `git clone <repository-url>`
+     Creates a copy of an existing repository.
+
+3. Check repository status:
+
+    `git status`
+     Displays the status of the working directory and staging area.
+
+4. View commit history:
+
+    `git log`
+     Shows the commit history.
+    `git log --oneline --graph`
+     Displays a simplified log with a graphical representation.
+
+---
+
+ Working with Files
+
+5. Stage changes:
+
+    `git add <file>`
+     Stages a specific file.
+    `git add .`
+     Stages all changes in the current directory.
+
+6. Commit changes:
+
+    `git commit -m "Commit message"`
+     Saves changes to the repository with a descriptive message.
+
+7. Discard changes:
+
+    `git checkout -- <file>`
+     Reverts uncommitted changes in a file.
+
+8. Remove files:
+
+    `git rm <file>`
+     Removes a file and stages the deletion.
+
+---
+
+ Branch Management
+
+9. List branches:
+
+    `git branch`
+     Lists all branches in the repository.
+
+10. Create a new branch:
+
+     `git branch <branch-name>`
+      Creates a new branch.
+
+11. Switch branches:
+
+     `git checkout <branch-name>`
+      Switches to a different branch.
+     `git switch <branch-name>`
+      (Modern alternative to `checkout`).
+
+12. Create and switch to a new branch:
+
+     `git checkout -b <branch-name>`
+      Creates and switches to a new branch.
+
+13. Merge branches:
+
+     `git merge <branch-name>`
+      Merges the specified branch into the current branch.
+
+14. Delete a branch:
+
+     `git branch -d <branch-name>`
+      Deletes a local branch.
+     `git push origin --delete <branch-name>`
+      Deletes a remote branch.
+
+---
+
+ Working with Remote Repositories
+
+15. Add a remote repository:
+
+     `git remote add origin <repository-url>`
+      Links a remote repository.
+
+16. View remote repositories:
+
+     `git remote -v`
+      Lists remote repositories and their URLs.
+
+17. Fetch changes:
+
+     `git fetch`
+      Downloads updates from the remote repository without merging.
+
+18. Pull changes:
+
+     `git pull`
+      Fetches and merges updates from the remote repository.
+
+19. Push changes:
+
+     `git push`
+      Pushes committed changes to the remote repository.
+
+---
+
+ Undo Changes
+
+20. Amend the last commit:
+
+     `git commit --amend -m "New message"`
+      Updates the last commit with a new message or staged changes.
+
+21. Reset changes:
+
+     `git reset <file>`
+      Unstages a file.
+     `git reset --hard`
+      Resets the working directory and staging area to the last commit.
+
+22. Revert a commit:
+
+     `git revert <commit-hash>`
+      Creates a new commit to undo the changes from a specific commit.
+
+---
+
+ Advanced
+
+23. Stash changes:
+
+     `git stash`
+      Temporarily saves changes without committing them.
+     `git stash pop`
+      Applies and removes the latest stashed changes.
+
+24. Cherry-pick a commit:
+
+     `git cherry-pick <commit-hash>`
+      Applies a specific commit to the current branch.
+
+25. Rebase branches:
+
+     `git rebase <branch-name>`
+      Reapplies commits on top of another branch.
+
+26. Squash commits:
+
+     `git rebase -i HEAD~<number-of-commits>`
+      Combines multiple commits into one.
+
+---
+
+These commands help developers collaborate, maintain version control, and manage project changes effectively.

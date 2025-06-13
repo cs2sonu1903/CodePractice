@@ -1,0 +1,222 @@
+ Key Features of Java
+
+1. Platform Independence: Java is designed to work on any device or operating system through the JVM (Java Virtual Machine).
+2. Object-Oriented: It follows Object-Oriented Programming principles, providing modular, maintainable, and reusable code.
+3. Multithreading: Java supports multithreading, enabling the execution of multiple tasks concurrently.
+4. Automatic Memory Management (Garbage Collection): Java automatically handles memory management.
+5. Rich Standard Library: Java provides a comprehensive set of APIs and libraries for various tasks (I/O, networking, utilities, etc.).
+6. Security: It has built-in security features, such as the sandbox model and bytecode verification.
+7. Robust Exception Handling: Java has strong error detection through its exception-handling mechanism.
+
+---
+
+ JDK, JRE, and JVM
+
+ JDK (Java Development Kit): Contains tools required for developing Java applications, including JRE and development tools like `javac`, `java`, etc.
+ JRE (Java Runtime Environment): Provides the environment for running Java applications. It includes the JVM and libraries but not development tools.
+ JVM (Java Virtual Machine): The engine that runs Java bytecode. It provides platform independence by converting bytecode into machine code for the specific operating system.
+
+---
+
+ OOP Principles
+
+ Abstraction: Hiding implementation details and showing only essential features.
+ Encapsulation: Wrapping data (variables) and methods into a single unit or class.
+ Inheritance: A mechanism where one class acquires the properties and behaviors of another class.
+ Polymorphism: The ability for a single interface to represent different underlying forms (e.g., method overriding or overloading).
+
+---
+
+ Access Modifiers
+
+ Public: Accessible from anywhere.
+ Private: Accessible only within the class.
+ Protected: Accessible within the same package and by subclasses.
+ Default (Package-Private): Accessible within the same package only.
+
+---
+
+ String, StringBuilder, and StringBuffer
+
+ String: Immutable; any modification creates a new object.
+ StringBuilder: Mutable, thread-unsafe, used for single-threaded scenarios.
+ StringBuffer: Mutable, thread-safe, used in multithreaded scenarios.
+
+---
+
+ Memory Management in Java
+
+ Heap: Stores objects created during runtime.
+ Stack: Stores method calls and local variables.
+ Garbage Collection: Automatically reclaims memory used by objects no longer referenced.
+
+---
+
+ Final Keyword
+
+ Class: Cannot be subclassed.
+ Method: Cannot be overridden.
+ Variable: Constants that cannot be modified once assigned.
+
+---
+
+ == vs. .equals()
+
+ `==`: Compares references (memory addresses) for objects.
+ `.equals()`: Compares the actual contents of two objects.
+
+---
+
+ Functional Interface
+
+A functional interface has exactly one abstract method and can have multiple default or static methods. It's used in lambda expressions.
+Example:
+
+```java
+@FunctionalInterface
+interface MyFunctionalInterface {
+    void display();
+}
+```
+
+---
+
+ Custom Exception Handling
+
+You can create custom exceptions by extending `Exception` or `RuntimeException` and adding constructors to pass custom error messages.
+Example:
+
+```java
+class MyException extends Exception {
+    public MyException(String message) {
+        super(message);
+    }
+}
+```
+
+---
+
+ Collections Framework
+
+1. ArrayList vs. LinkedList: `ArrayList` is backed by a dynamic array and offers fast random access. `LinkedList` uses a doubly linked list for efficient insertions and deletions but slower access.
+2. HashMap: Uses a hash table to store key-value pairs, with quick retrieval based on hash codes.
+3. HashMap vs. ConcurrentHashMap: `ConcurrentHashMap` is thread-safe and allows multiple threads to access the map concurrently without locking the entire map.
+4. Set, List, Map:
+
+    `Set` stores unique elements, `List` stores ordered elements, and `Map` stores key-value pairs.
+5. HashSet vs. TreeSet: `HashSet` is unordered, while `TreeSet` maintains elements in sorted order.
+6. Fail-fast vs. Fail-safe Iterators: Fail-fast iterators throw `ConcurrentModificationException` when the collection is modified during iteration, while fail-safe iterators work with copy-on-write collections and do not throw such exceptions.
+7. Sorting Collections: Use `Collections.sort()` for `List` or `Comparator` for custom sorting.
+8. Comparator vs. Comparable: `Comparable` is used for natural ordering, while `Comparator` is used for custom ordering.
+9. Stream API: Provides functional-style operations on collections, such as filtering, mapping, and reducing.
+10. Thread Safety in Collections: Use `Collections.synchronizedList()`, `ConcurrentHashMap`, etc., for thread-safe operations.
+
+---
+
+ Multithreading and Concurrency
+
+1. Thread vs. Process: A thread is a lightweight process within a program, while a process is an independent program in execution.
+2. Ways to Create a Thread: Extend `Thread` class or implement `Runnable` interface.
+3. Runnable vs. Callable: `Runnable` cannot return a result or throw an exception, while `Callable` can return a result and throw an exception.
+4. Thread Safety: Use `synchronized` blocks, `ReentrantLock`, or `ThreadLocal` for ensuring thread safety.
+5. synchronized Keyword: Ensures that only one thread can access a block of code at a time.
+6. ThreadLocal: Provides thread-local variables, ensuring each thread has its copy.
+7. wait() vs. sleep(): `wait()` releases the lock and puts the thread in a waiting state, while `sleep()` only pauses the thread without releasing the lock.
+8. Executor Framework: Provides a higher-level replacement for managing threads using thread pools.
+9. ReentrantLock vs. synchronized: `ReentrantLock` provides more fine-grained control and avoids blocking when used with try-lock.
+10. Deadlock: A situation where two or more threads are blocked forever. It can be prevented by avoiding circular dependencies or using `ReentrantLock` with timeouts.
+
+---
+
+ Java 8 Features
+
+1. Java 8 Features: Lambda expressions, Stream API, `default` methods in interfaces, `Optional`, new Date/Time API, etc.
+2. Lambda Expressions: Shortened way to represent a method as an argument to a function.
+   Example: `(x, y) -> x + y`
+3. Stream.map() vs. Stream.flatMap(): `map()` transforms each element to another form, while `flatMap()` flattens nested structures.
+4. Optional: A container for an object that might be null, preventing `NullPointerException`.
+5. default Method: Allows interfaces to have method implementations.
+6. Functional Interfaces: Interfaces with a single abstract method, used in lambda expressions.
+7. Collectors: Utility class for collecting results from a stream (e.g., `toList()`, `joining()`).
+8. Sequential vs. Parallel Streams: Sequential streams process data in the order they appear, while parallel streams process data concurrently.
+9. forEach(): Performs an action for each element in the stream or collection.
+10. Predicate: Represents a boolean-valued function, often used for filtering in streams.
+
+---
+
+ Exception Handling
+
+1. Checked vs. Unchecked Exceptions: Checked exceptions are checked at compile-time, while unchecked exceptions (runtime exceptions) are checked at runtime.
+2. Creating Custom Exceptions: Extend `Exception` or `RuntimeException` to define custom exceptions.
+3. finally Block: Executes regardless of whether an exception is thrown, usually for cleanup.
+4. try-with-resources: Automatically closes resources (like files or database connections) at the end of the block.
+5. Rethrow Exceptions: Use `throw` and `throws` to rethrow exceptions in Java 7 and later.
+
+---
+
+ File Handling and I/O
+
+1. FileReader vs. BufferedReader: `FileReader` reads file data character by character, while `BufferedReader` reads data in chunks and is more efficient.
+2. Reading/Writing Files: Use classes like `FileReader`, `FileWriter`, `BufferedReader`, `BufferedWriter`, `FileInputStream`, `FileOutputStream`.
+3. NIO: Java NIO provides non-blocking I/O and better performance over traditional I/O using `FileChannel`, `Path`, etc.
+4. Serialization/Deserialization: Use `ObjectOutputStream` and `ObjectInputStream` for serializing objects.
+5. Files Utility Class: Provides methods for file operations like copy, delete, and move.
+
+---
+
+ Java Frameworks and Libraries
+
+1. Spring: A comprehensive framework for building enterprise applications, providing dependency injection, aspect-oriented programming, and more.
+2. Hibernate: An ORM (Object-Relational Mapping) tool that simplifies database interaction by mapping Java objects to database tables.
+3. Managing Dependencies: Use Maven or Gradle to handle project dependencies and build configurations.
+4. Annotations: Provide metadata and instructions to frameworks, such as `@Autowired`, `@Entity`, etc.
+5. Dependency Injection: Spring's way of providing objects that a class needs (dependencies) rather than allowing the class to create them itself.
+
+---
+
+ Design Patterns
+
+1. Design Patterns: Reusable solutions to common software design problems, such as Singleton, Factory, Observer, etc.
+2. Singleton: Ensures that a class has only one instance and provides a global point of access to it.
+3. Factory Pattern: Defines an interface for creating objects but lets subclasses alter the type of objects that will be created.
+4. Observer Pattern: Allows a subject to notify observers about changes in state.
+5. Builder Pattern: Separates the construction of a complex object from its representation, allowing for different representations.
+
+---
+
+ Web and REST APIs
+
+1. REST API vs. SOAP: REST is lightweight, uses HTTP, and supports multiple formats (XML, JSON), while SOAP is heavier, based on XML, and usually requires more overhead.
+2. Creating a RESTful Service in Spring Boot: Use `@RestController` and `@RequestMapping` annotations to expose HTTP endpoints.
+3. HTTP Methods:
+
+    `GET` retrieves data.
+    `POST` creates data.
+    `PUT` updates data.
+    `DELETE` removes data.
+4. Error Handling: Use `@ExceptionHandler` or `@ControllerAdvice` in Spring for error handling.
+5. @RestController: A combination of `@Controller` and `@ResponseBody`, used for RESTful web services.
+
+---
+
+ Database and Persistence
+
+1. JDBC: Java API for connecting and interacting with databases using SQL queries.
+2. JPA: A Java API for object-relational mapping, allowing Java objects to be mapped to database tables.
+3. Transactions: Use `Connection` methods like `setAutoCommit(false)`, `commit()`, and `rollback()` for handling transactions.
+4. Lazy Loading vs. Eager Loading: Lazy loading loads related data on demand, while eager loading loads it immediately.
+5. Statement vs. PreparedStatement vs. CallableStatement:
+
+    `Statement`: For basic SQL queries.
+    `PreparedStatement`: For precompiled SQL queries with parameterized inputs.
+    `CallableStatement`: For executing stored procedures.
+
+---
+
+ Miscellaneous
+
+1. volatile Keyword: Ensures that a variable's value is updated across all threads.
+2. Unit Testing: Use JUnit for writing tests and Mockito for mocking dependencies.
+3. Class Loaders: Load classes into the JVM at runtime, providing isolation and dynamic class loading.
+4. Heap vs. Stack: The heap is for dynamic memory allocation, while the stack stores method calls and local variables.
+5. Abstract Class vs. Interface: An abstract class can have method implementations, while an interface can only have method declarations (prior to Java 8).

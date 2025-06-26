@@ -1,4 +1,4 @@
-package com.sonu.oopsinterview;
+package com.sonu.exception;
 
 public class ExceptionTest {
     public static void main(String[] args) {

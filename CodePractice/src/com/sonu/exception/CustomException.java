@@ -1,4 +1,4 @@
-package com.sonu.oopsinterview;
+package com.sonu.exception;
 
 public class CustomException extends Exception{
     public CustomException(){

@@ -36,15 +36,18 @@ public class NumberTest {
         System.out.println(squire);
 
         //even squire
-        List<Integer> squireEven=list.stream().map(i->i*i).filter(i->i%2==0).collect(Collectors.toList());
+        List<Integer> squireEven=list.stream().map(i->i*i).filter(i->i%2==0)
+                .collect(Collectors.toList());
         System.out.println(squireEven);
 
         //sorted squire of the arraylist
-        List<Integer> sortedSquire = list.stream().sorted().map(i -> i * i).collect(Collectors.toList());
+        List<Integer> sortedSquire = list.stream().sorted().map(i -> i * i)
+                .collect(Collectors.toList());
         System.out.println(sortedSquire);
 
         //sorted even squire
-        List<Integer> sortevenSquire = list.stream().sorted().map(i -> i * i).filter(i -> i % 2 == 0).collect(Collectors.toList());
+        List<Integer> sortevenSquire = list.stream().sorted().map(i -> i * i)
+                .filter(i -> i % 2 == 0).collect(Collectors.toList());
         System.out.println(sortevenSquire);
 
         //Aniother list

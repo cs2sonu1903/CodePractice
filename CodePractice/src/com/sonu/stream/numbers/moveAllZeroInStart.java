@@ -12,15 +12,18 @@ public class moveAllZeroInStart {
 
         //1st Approch and simple one
 
-        List<Integer> zeros = Arrays.stream(arr).boxed().filter(x -> x == 0).collect(Collectors.toList());
-        List<Integer> NonZeros = Arrays.stream(arr).boxed().filter(x -> x != 0).collect(Collectors.toList());
+        List<Integer> zeros = Arrays.stream(arr).boxed()
+                .filter(x -> x == 0).collect(Collectors.toList());
+        List<Integer> NonZeros = Arrays.stream(arr).boxed()
+                .filter(x -> x != 0).collect(Collectors.toList());
         List<Integer> finalList=new ArrayList<>();
         finalList.addAll(zeros);
         finalList.addAll(NonZeros);
         System.out.println(finalList);
 
         //2nd Approch
-        List<Integer> values = Arrays.stream(arr).boxed().collect(Collectors.groupingBy(e -> e != 0)).values()
+        List<Integer> values = Arrays.stream(arr).boxed().collect(Collectors
+                        .groupingBy(e -> e != 0)).values()
                 .stream().flatMap(i->i.stream()).collect(Collectors.toList());
         System.out.println(values);
     }

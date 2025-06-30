@@ -34,9 +34,9 @@ public class ArrayListTest {
 
         // new list
 
-        List<Student> studentList=Arrays.asList(new Student("Sonu",1),
-                new Student("Rajesh",2),
-                new Student("Divyanshu",3));
+        List<Student> studentList=Arrays.asList(new Student(1,"Sonu",100),
+                new Student(2,"Rajesh",65l),
+                new Student(3,"Divyanshu",39L));
         System.out.println("Student list /n"+studentList);
 
         // store list into map

@@ -28,13 +28,16 @@ public class ObjectTest {
         //Group the Employees by age.
         System.out.println("Group the Employees by age");
 
-//      Map<Integer, List<Employee>> groupByAge = empList.stream().collect(Collectors.groupingBy(e -> e.getAge(), Collectors.toList()));
-        Map<Integer, List<Employee>> groupByAge = empList.stream().collect(Collectors.groupingBy(Employee::getAge));
+//      Map<Integer, List<Employee>> groupByAge = empList.stream().collect(Collectors
+//      .groupingBy(e -> e.getAge(), Collectors.toList()));
+        Map<Integer, List<Employee>> groupByAge = empList.stream()
+                .collect(Collectors.groupingBy(Employee::getAge));
         System.out.println(groupByAge);
 
         //Find the count of male and female employees present in the organization
         System.out.println("count of male and female employees present in the organization");
-        Map<String, Long> countByGender = empList.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
+        Map<String, Long> countByGender = empList.stream().collect(Collectors
+                .groupingBy(Employee::getGender, Collectors.counting()));
         System.out.println(countByGender);
 
         //Print the names of all departments in the organization
@@ -43,12 +46,14 @@ public class ObjectTest {
 
         //Print Average age of Male and Female Employees..
         System.out.println("Print Average age of Male and Female Employees.");
-        Map<String, Double> avhAgeMF = empList.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingInt(Employee::getAge)));
+        Map<String, Double> avhAgeMF = empList.stream().collect(Collectors
+                .groupingBy(Employee::getGender, Collectors.averagingInt(Employee::getAge)));
         System.out.println(avhAgeMF);
 
         //Print the number of employees in each department.
         System.out.println("Print the number of employees in each department.");
-        Map<String, Long> noEachDept = empList.stream().collect(Collectors.groupingBy(Employee::getDeptName, Collectors.counting()));
+        Map<String, Long> noEachDept = empList.stream().collect(Collectors
+                .groupingBy(Employee::getDeptName, Collectors.counting()));
         System.out.println(noEachDept);
 
         //Find oldest employee by age
@@ -58,19 +63,25 @@ public class ObjectTest {
 
         //Find longest serving employees in the organization
         System.out.println("Find longest serving employees in the organization");
-        Employee longSerEmployee = empList.stream().sorted(Comparator.comparing(Employee::getYearOfJoining)).findFirst().get();
+        Employee longSerEmployee = empList.stream().sorted(Comparator
+                .comparing(Employee::getYearOfJoining)).findFirst().get();
         System.out.println(longSerEmployee);
 
         //Find longest serving employee in each department
         System.out.println("Find longest serving employee in each department");
-        Map<String, Optional<Employee>> lomgServEachDep = empList.stream().collect(Collectors.groupingBy(Employee::getDeptName, Collectors.minBy(Comparator.comparing(Employee::getYearOfJoining))));
+        Map<String, Optional<Employee>> lomgServEachDep = empList.stream()
+                .collect(Collectors.groupingBy(Employee::getDeptName, Collectors.minBy(Comparator
+                        .comparing(Employee::getYearOfJoining))));
         System.out.println(lomgServEachDep);
-        empList.stream().collect(Collectors.groupingBy(Employee::getDeptName, Collectors.minBy(Comparator.comparing(Employee::getYearOfJoining))))
-                .forEach((dept,empOpt)->empOpt.ifPresent(emp->System.out.println(dept+" -> "+emp.getName()+" ( DOJ : "+emp.getYearOfJoining()+")")));
+        empList.stream().collect(Collectors.groupingBy(Employee::getDeptName, Collectors
+                        .minBy(Comparator.comparing(Employee::getYearOfJoining))))
+                .forEach((dept,empOpt)->empOpt.ifPresent(emp->System.out.
+                        println(dept+" -> "+emp.getName()+" ( DOJ : "+emp.getYearOfJoining()+")")));
 
         //Find all employees who lives in ‘Blore’ city, sort them by their name and print the names of employees.
         System.out.println("Find all employees who lives in ‘Blore’ city, sort them by their name and print the names of employees.");
-        empList.stream().filter(e->e.getCity().equalsIgnoreCase("Blore")).sorted(Comparator.comparing(Employee::getName))
+        empList.stream().filter(e->e.getCity().equalsIgnoreCase("Blore"))
+                .sorted(Comparator.comparing(Employee::getName))
                 .forEach(emp->System.out.println("Employee staing in the city Blore ::"+ emp.getName()));
 
         //Sorting a Stream by age and name fields
@@ -88,7 +99,9 @@ public class ObjectTest {
 
         //Find the emp who is earning more then 1000 and and store in the map where key is city and value is the list of employee present in that city
         System.out.println("Cognizent");
-        Map<String, List<String>> collect = empList.stream().filter(e -> e.getSalary() > 1000).collect(Collectors.groupingBy(emp -> emp.getCity(), Collectors.mapping(e -> e.getName(), Collectors.toList())));
+        Map<String, List<String>> collect = empList.stream()
+                .filter(e -> e.getSalary() > 1000).collect(Collectors.
+                        groupingBy(emp -> emp.getCity(), Collectors.mapping(e -> e.getName(), Collectors.toList())));
         System.out.println(collect);
     }
 

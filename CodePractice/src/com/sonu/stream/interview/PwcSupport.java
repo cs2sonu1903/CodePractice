@@ -28,13 +28,17 @@ class Employee1{
 public class PwcSupport {
     public static void main(String[] args) {
         List<Employee1> listOfEmp = Arrays.asList(
-                new Employee1("abd", 10000, Arrays.asList(new Address("Mayur Bihar", "Delhi","Delhi"))),
-                new Employee1("sahu", 170000, Arrays.asList(new Address("WhiteField","Bangalore", "Karnataka"))),
-                new Employee1("sneha", 130000, Arrays.asList(new Address("Hinzevada","Pune", "Maharashtra")))
+                new Employee1("abd", 10000, Arrays.asList(
+                        new Address("Mayur Bihar", "Delhi","Delhi"))),
+                new Employee1("sahu", 170000, Arrays.asList(
+                        new Address("WhiteField","Bangalore", "Karnataka"))),
+                new Employee1("sneha", 130000, Arrays.asList(
+                        new Address("Hinzevada","Pune", "Maharashtra")))
         );
         System.out.println(listOfEmp);
 
-        List<String> collect = listOfEmp.stream().flatMap(e -> e.addresses.stream().map(add->e.name+"   "+ add.getCity())).collect(Collectors.toList());
+        List<String> collect = listOfEmp.stream().flatMap(e -> e.addresses.stream()
+                .map(add->e.name+"   "+ add.getCity())).collect(Collectors.toList());
         System.out.println(collect);
 
     }

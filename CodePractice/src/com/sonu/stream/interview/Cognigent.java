@@ -18,11 +18,15 @@ public class Cognigent {
 
         System.out.println(arrayList);
         //find the employee who is earning more then 30000
-        List<Employee> earnMore30 = arrayList.stream().filter(emp -> emp.getSalary() > 30000).collect(Collectors.toList());
+        List<Employee> earnMore30 = arrayList.stream().
+                filter(emp -> emp.getSalary() > 30000).collect(Collectors.toList());
         System.out.println(earnMore30);
 
         // store this in Map where city is the key and List of employee is value
-        Map<Object, List<Object>> collectInMap = arrayList.stream().filter(emp -> emp.getSalary() > 30000).collect(Collectors.groupingBy(e -> e.getCity(), Collectors.mapping(e1 -> e1.getName(), Collectors.toList())));
+        Map<Object, List<Object>> collectInMap = arrayList.stream()
+                .filter(emp -> emp.getSalary() > 30000)
+                .collect(Collectors.groupingBy(e -> e.getCity(),
+                        Collectors.mapping(e1 -> e1.getName(), Collectors.toList())));
         System.out.println(collectInMap);
     }
 }

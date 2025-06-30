@@ -1,0 +1,162 @@
+Here are professional and thoughtful sample answers tailored to a Java backend developer with 3 years of experience in Spring Boot and microservices:
+
+---
+
+ ❓ Why are you looking for a new opportunity?
+
+Answer:
+"I'm looking for a new opportunity where I can work on more challenging and large-scale projects,
+especially those involving scalable microservices and cloud-native architectures. 
+I’ve gained solid experience in my current role, but I’m now eager to grow further 
+by learning from a more dynamic environment, collaborating with experienced engineers,
+and contributing to more impactful solutions. I’m particularly interested in roles that 
+value clean architecture, DevOps integration, and continuous improvement."
+
+---
+
+ ❓ What do you expect from your manager or team lead?
+
+Answer:
+"I expect a manager or lead to provide clarity in direction, constructive feedback, 
+and a supportive environment that encourages learning and innovation. I appreciate 
+leaders who trust their team, empower individuals to take ownership, and are 
+approachable when guidance is needed. Open communication and a culture of mutual 
+respect are very important to me."
+
+---
+
+ ❓ Where do you see yourself in the next 2-3 years?
+
+Answer:
+"In the next 2–3 years, I aim to become a strong senior backend developer, 
+with deep expertise in designing scalable microservices, cloud infrastructure, 
+and system design. I also hope to mentor junior developers and contribute to 
+architectural discussions. Eventually, I’d like to move toward a lead role, 
+driving technical decisions and ensuring delivery quality."
+
+---
+
+ ❓ What motivates you as a backend developer?
+
+Answer:
+"I enjoy solving complex problems and building systems that are efficient, 
+reliable, and scalable. Knowing that my work contributes to the core 
+functionality of a product motivates me. I’m especially driven by learning 
+new technologies, optimizing performance, and improving code quality through 
+clean design and automation."
+
+---
+
+ ❓ What type of work environment helps you perform at your best?
+
+Answer:
+"I perform best in a collaborative environment that values knowledge sharing, 
+clean code practices, and continuous learning. A culture that encourages ownership, 
+supports innovation, and allows for open communication helps me stay focused and motivated. 
+I also appreciate teams where feedback is seen as an opportunity for growth."
+
+
+
+ ❓ How do you manage tasks when you're working on multiple microservices with different deadlines?
+
+Answer:
+I prioritize tasks based on business impact, urgency, and dependencies. 
+I break down work into smaller deliverables and keep track using tools like Jira. 
+For microservices with tighter deadlines or external dependencies, I focus on early 
+planning and proactive communication with stakeholders. I also ensure regular sync-ups 
+with the team to avoid bottlenecks and adjust priorities as needed.
+
+---
+
+ ❓ Have you ever disagreed with a senior or team lead on a technical decision? How did you handle it?
+
+Answer:
+Yes, I once disagreed with a proposed design involving shared database access 
+between microservices, which I felt could cause tight coupling. I respectfully 
+shared my concerns with supporting documentation and suggested an event-driven 
+approach instead. We discussed it openly in a design review, and though the final 
+decision was a middle ground, the team appreciated the constructive input.
+I believe in respectful, data-driven discussions.
+
+---
+
+ ❓ Can you describe a time when a production issue occurred? How did you react and resolve it?
+
+Answer:
+We once had a production issue where a service stopped processing Kafka messages
+due to an unhandled null pointer exception after a deployment. I immediately helped
+analyze the logs, identified the root cause, and rolled back the deployment.
+We added better null checks, improved logging, and later created a regression 
+test to prevent such issues in the future. I also worked with QA and DevOps to
+update our monitoring alerts.
+
+---
+
+ ❓ How do you ensure the quality of your code before delivering it for 
+review or deployment?
+
+Answer:
+I follow clean code principles, proper naming conventions, and SOLID design principles. 
+I write unit and integration tests using JUnit and Mockito, and I ensure high test coverage. 
+I also test my microservices in local and staging environments using Postman 
+or Swagger. Before delivery, I do self-reviews and leverage SonarQube or static 
+analysis tools if available.
+
+---
+
+ ❓ How do you collaborate with QA, DevOps, and other teams in a microservices-based project?
+
+Answer:
+I ensure early communication with QA to clarify test scenarios and edge cases. 
+I write clear API contracts and share Postman collections or Swagger docs. 
+With DevOps, I work on defining deployment pipelines, configuration management, 
+and resolving environment issues. I also actively participate in stand-ups 
+and cross-functional meetings to ensure alignment.
+
+---
+
+ ❓ How do you prioritize bugs and feature enhancements in a sprint?
+
+Answer:
+I prioritize based on business impact, severity, and user pain points. 
+Critical bugs are fixed immediately, while minor ones are planned into 
+upcoming sprints. For feature enhancements, I coordinate with the product 
+owner and team to balance technical effort and business value. I use sprint
+planning meetings to raise concerns and help adjust scope realistically.
+
+---
+
+ ❓ Have you mentored or helped a junior developer? How did you approach it?
+
+Answer:
+Yes, I mentored a junior developer in my previous team. I began by understanding 
+their strengths and gaps, then helped them with code walkthroughs, best practices, 
+and breaking down tasks. I encouraged them to ask questions, reviewed their PRs 
+constructively, and paired with them on tricky implementations. Over time, they 
+became more confident and independent.
+
+---
+
+ ❓ Tell me about a time you missed a deadline. What happened, and what did you learn?
+
+Answer:
+In one sprint, I underestimated the complexity of integrating a third-party API.
+Unexpected API response issues caused delays. I communicated the risk early, and 
+while the team helped mitigate the delay, the delivery was a day late. I learned 
+the importance of spike stories for unknowns and buffer time in estimations. 
+Since then, I’ve been more careful in assessing risks during planning.
+
+---
+
+ ❓ What steps do you take to improve your skills and stay up to date with Java or Spring Boot?
+
+Answer:
+I regularly follow blogs like Baeldung, DZone, and Java news on Medium. 
+I take online courses on platforms like Udemy and Coursera, especially 
+when new Spring Boot versions or tools like Docker/Kubernetes are updated. 
+I also build small side projects to try out new concepts like reactive 
+programming, and I review open-source code on GitHub to learn industry 
+best practices.
+
+
+

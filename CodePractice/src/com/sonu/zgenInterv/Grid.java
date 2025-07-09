@@ -1,4 +1,4 @@
-package com;
+package com.sonu.zgenInterv;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -24,19 +24,6 @@ public class Grid {
           }
       }
 
-//      Arrays.stream(s.split("")).forEach(Comparator.comparing());
-      /*char[] ch=s.toCharArray();
-      String oStr="",secStr="";
-
-      for (int i = 0; i <ch.length-1; i++) {
-          if(!oStr.contains(ch[i])){
-              oStr+=ch[i];
-          }else {
-              secStr+=ch[i];
-          }
-
-      }
-      System.out.println(oStr);*/
   }
 
 }

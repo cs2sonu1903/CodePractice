@@ -1,6 +1,6 @@
 package com.sonu.oopsinterview;
 
-import com.sonu.stream.Employee;
+
 
 public class EqualMethodOverride {
     public static void main(String[] args) {

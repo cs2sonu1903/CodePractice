@@ -1,4 +1,4 @@
-package com;
+package com.sonu.zgenInterv;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.sonu;
+package com.sonu.zgenInterv;
 
 import java.util.Iterator;
 import java.util.LinkedList;

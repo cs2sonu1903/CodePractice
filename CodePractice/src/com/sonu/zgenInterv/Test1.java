@@ -1,4 +1,4 @@
-package com.sonu;
+package com.sonu.zgenInterv;
 
 public class Test1 {
 

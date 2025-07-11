@@ -63,5 +63,34 @@ public class StreamTestObj {
         //Print the number of employees in each department.
         Map<String, Long> noEmpEachDep = empList.stream().collect(Collectors.groupingBy(Employee::getDeptName, Collectors.counting()));
         System.out.println(noEmpEachDep);
+
+        //Find longest serving employees in the organization.
+        Employee lonServ = empList.stream().sorted(Comparator.comparing(Employee::getYearOfJoining)).findFirst().get();
+        System.out.println(lonServ);
+
+        //Find longest serving employee in each department
+        Map<String, Optional<Employee>> lonServByEachDept = empList.stream().collect(Collectors.groupingBy(Employee::getDeptName, Collectors.minBy(Comparator
+                .comparing(Employee::getYearOfJoining))));
+        System.out.println(lonServByEachDept);
+
+        //Find average age of gender in each department.
+        Map<String, Map<String, Double>> avgAgeEachDepMF = empList.stream().collect(Collectors.groupingBy(Employee::getDeptName, Collectors
+                .groupingBy(Employee::getGender, Collectors.averagingInt(Employee::getAge))));
+        System.out.println(avgAgeEachDepMF);
+
+        //Find youngest female employee in the organisation.
+        Employee youngestFemale = empList.stream().filter(e -> e.getGender().equals("F")).min(Comparator.comparing(Employee::getAge)).get();
+        System.out.println(youngestFemale);
+
+        //Find the youngest employee in each department
+        Map<String, Optional<Employee>> youngEmpEachDept = empList.stream().collect(Collectors.
+                groupingBy(Employee::getDeptName, Collectors.minBy(Comparator.comparing(Employee::getAge))));
+        System.out.println(youngEmpEachDept);
+
+        // Find employees whose age is greater than 30 and less than 30.
+
+        List<Employee> ageG30L30 = empList.stream().filter(e -> e.getAge() > 30 || e.getAge() < 30).collect(Collectors.toList());
+        System.out.println(ageG30L30);
+
     }
 }

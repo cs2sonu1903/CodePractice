@@ -1,4 +1,4 @@
-package com.datastructure;
+package com.datastructure.linkedList;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class RotateLinkedListByNTime {
     }
 
     public static void main(String[] args) {
-       /* List<Integer> list =new LinkedList<>();
+       /* List<Integer> list =new MyLinkedList<>();
         list.add(30);
         list.add(40);
         list.add(50);

@@ -1,4 +1,4 @@
-package com.datastructure;
+package com.datastructure.linkedList;
 
 public class RevSingleLinkedList {
     static class  ListNode {

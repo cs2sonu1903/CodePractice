@@ -17,9 +17,10 @@ public class FirstNonRepeatingChar {
 
         //find the first repeated character
         Set<Character> seenCharacters = new HashSet<>();
+        Set<String> seenCharacters1 = new HashSet<>();
         Character c2 = str.chars().mapToObj(c -> (char) c).filter(c -> !seenCharacters.add(c)).findFirst().orElse(null);
-//        String repFirsCh = Arrays.stream(str.split("")).filter(ch -> !seenCharacters.add(ch)).findFirst().orElse(null);
-//        System.out.println(repFirsCh);
+        String repFirsCh = Arrays.stream(str.split("")).filter(ch -> !seenCharacters1.add(ch)).findFirst().orElse(null);
+        System.out.println(repFirsCh);
         System.out.println(c2);
     }
 }

@@ -8,7 +8,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class GridDynamics {
+public class
+GridDynamics {
     public static void main(String[] args) {
 
         List<String> list= Arrays.asList("Cat","Dog","Cow","Cat","Dog","Cow","Goat","Dog","Dog");

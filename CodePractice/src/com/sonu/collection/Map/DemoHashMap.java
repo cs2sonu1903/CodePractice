@@ -8,10 +8,15 @@ public class DemoHashMap {
         hashMap.put(101,"Sonu");
         hashMap.put(102,"Rajesh");
         hashMap.put(103,"Riya");
-        hashMap.put(103,"Riya Pandey");
+
 
         System.out.println(hashMap);
         System.out.println(hashMap.hashCode());
+        System.out.println(hashMap.get(103).hashCode());
+        hashMap.put(103,"Riya Pandey");
+        System.out.println(hashMap);
+        System.out.println(hashMap.hashCode());
+        System.out.println(hashMap.get(103).hashCode());
         System.out.println(hashMap.size());
         System.out.println(hashMap.get(101));
         System.out.println(hashMap.values());
